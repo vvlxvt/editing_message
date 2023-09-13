@@ -18,3 +18,15 @@ async def process_command_start(message: Message):
                  '/markdownv2 - пример разметки с помощью MarkdownV2\n'
                  '/noformat - пример с разметкой, но без указания '
                  'параметра parse_mode')
+
+@dp.message(Command(commands='html'))
+async def process_html_command(message: Message):
+    await message.answer(text='Это текст, демонстрирующий '
+                 'как работает HTML-разметка:\n\n'
+                 '<b>Это жирный текст</b>\n'
+                 '<i>Это наклонный текст</i>\n'
+                 '<u>Это подчеркнутый текст</u>\n'
+                 '<span class="tg-spoiler">А это спойлер</span>\n\n'
+                 'Чтобы еще раз посмотреть список доступных команд - '
+                 'отправь команду /help', parse_mode='HTML')
+
