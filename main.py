@@ -42,3 +42,16 @@ async def process_markdownv2_command(message: Message):
                  'отправь команду /help',
             parse_mode='MarkdownV2')
 
+@dp.message(Command(commands='noformat'))
+async def process_noformat_command(message: Message):
+    await message.answer(
+            text='Это текст, демонстрирующий '
+                 'как отображается текст, если не указать '
+                 'параметр parse_mode:\n\n'
+                 '<b>Это мог бы быть жирный текст</b>\n'
+                 '_Это мог бы быть наклонный текст_\n'
+                 '<u>Это мог бы быть подчеркнутый текст</u>\n'
+                 '||А это мог бы быть спойлер||\n\n'
+                 'Чтобы еще раз посмотреть список доступных команд - '
+                 'отправь команду /help')
+
