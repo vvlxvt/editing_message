@@ -30,3 +30,15 @@ async def process_html_command(message: Message):
                  'Чтобы еще раз посмотреть список доступных команд - '
                  'отправь команду /help', parse_mode='HTML')
 
+async def process_markdownv2_command(message: Message):
+    await message.answer(
+            text='Это текст, демонстрирующий '
+                 'как работает MarkdownV2\-разметка:\n\n'
+                 '*Это жирный текст*\n'
+                 '_Это наклонный текст_\n'
+                 '__Это подчеркнутый текст__\n'
+                 '||А это спойлер||\n\n'
+                 'Чтобы еще раз посмотреть список доступных команд \- '
+                 'отправь команду /help',
+            parse_mode='MarkdownV2')
+
